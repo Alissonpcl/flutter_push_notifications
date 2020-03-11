@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_push_notifications/fcm_handler.dart';
+import 'package:flutter_push_notifications/screen_two.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FCMHandler(child: MyHomePage(title: 'Flutter Demo Home Page')),
+      home: ScreenTwo(),
+//      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

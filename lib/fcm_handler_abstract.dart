@@ -3,39 +3,28 @@ import 'dart:async';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
-//Esse handler foi criado para que possa ser reutilizado em diversas telas
-class FCMHandler extends StatefulWidget {
-  final Widget child;
-  final MessageHandler onMessage;
-  final MessageHandler onLaunch;
-  final MessageHandler onResume;
-
-  FCMHandler({@required this.child, this.onMessage, this.onLaunch, this.onResume});
-
-  @override
-  _FCMHandlerState createState() => _FCMHandlerState();
-}
-
-class _FCMHandlerState extends State<FCMHandler> {
+mixin FCMHandlerState<T extends StatefulWidget> on State<T> {
   final FirebaseMessaging _fcm = FirebaseMessaging();
   StreamSubscription iosSubscription;
 
   @override
   void initState() {
+    debugPrint('initing mixin');
     super.initState();
     _fcm.requestNotificationPermissions(const IosNotificationSettings(
         sound: true, badge: true, alert: true, provisional: true));
     _saveDeviceToken();
 
     _fcm.configure(
-      onMessage: widget.onMessage,
-      onLaunch: widget.onLaunch,
-      onResume: widget.onResume,
+      onMessage: onMessage,
+      onLaunch: onLaunch,
+      onResume: onResume,
     );
   }
 
   @override
   void dispose() {
+    debugPrint('disposing mixin');
     if (iosSubscription != null) iosSubscription.cancel();
     super.dispose();
   }
@@ -45,8 +34,8 @@ class _FCMHandlerState extends State<FCMHandler> {
     debugPrint('token: $fcmToken');
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return widget.child;
-  }
+  Future<dynamic> onMessage(Map<String, dynamic> message);
+  Future<dynamic> onLaunch(Map<String, dynamic> message);
+  Future<dynamic> onResume(Map<String, dynamic> message);
+
 }
