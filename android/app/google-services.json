@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "947794520869",
+    "firebase_url": "https://flutterpush-8900a.firebaseio.com",
+    "project_id": "flutterpush-8900a",
+    "storage_bucket": "flutterpush-8900a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947794520869:android:5ba874e2b1c94519e288cc",
+        "android_client_info": {
+          "package_name": "br.com.alissonlima.flutter_push_notifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947794520869-f0l6j769q4qb6dphas60rr0g8g7h2tjm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV3c53q1QEJSfhOiX31Ir9njUhf_V_WQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "947794520869-f0l6j769q4qb6dphas60rr0g8g7h2tjm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
