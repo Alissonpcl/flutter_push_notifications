@@ -7,7 +7,7 @@ class ScreenTree extends StatefulWidget {
   _ScreenTwoState createState() => _ScreenTwoState();
 }
 
-class _ScreenTwoState extends State<ScreenTree> with FCMHandlerState{
+class _ScreenTwoState extends FCMHandlerState<ScreenTree>{
   String _fromAction;
 
   @override

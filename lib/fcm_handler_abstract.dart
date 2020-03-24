@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
-mixin FCMHandlerState<T extends StatefulWidget> on State<T> {
+abstract class FCMHandlerState<T extends StatefulWidget> extends State<T> {
   final FirebaseMessaging _fcm = FirebaseMessaging();
   StreamSubscription iosSubscription;
 
